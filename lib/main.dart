@@ -65,7 +65,9 @@ class _MainNavigatorState extends State<MainNavigator> {
   }
 
   Widget _buildBottomNav() {
-    final isDark = _currentIndex != 2; // Water screen is light
+
+    final isDark = _currentIndex != 2 && _currentIndex != 4;
+
     return Container(
       decoration: BoxDecoration(
         color: isDark ? AppTheme.darkSurface : Colors.white,
@@ -88,7 +90,8 @@ class _MainNavigatorState extends State<MainNavigator> {
               _navItem(1, Icons.fitness_center_rounded, 'Workout', isDark),
               _navItem(2, Icons.water_drop_outlined, 'Water', isDark),
               _navItem(3, Icons.show_chart_rounded, 'Weight', isDark),
-              _navItem(4, Icons.person_outline_rounded, 'Profile', isDark),
+              _navItem(4, Icons.flag_outlined, 'Goals', isDark),        // ✅ Fix Bug 1
+              _navItem(5, Icons.person_outline_rounded, 'Profile', isDark), // ✅ Fix Bug 1
             ],
           ),
         ),
